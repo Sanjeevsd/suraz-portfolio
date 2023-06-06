@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main
       className={`flex min-h-screen flex-col gap-[10px]  md:gap-[50px] px-[20px] md:px-24 py-[20px] md:py-[50px]`}
@@ -23,7 +25,10 @@ export default function Home() {
           >
             Giveaway
           </button>
-          <button className="text-red-500 border border-red-500 rounded-sm px-4 py-2 text-[12px] md:text-[16px]">
+          <button
+            onClick={() => router.push("/tournaments")}
+            className="text-red-500 border border-red-500 rounded-sm px-4 py-2 text-[12px] md:text-[16px]"
+          >
             Tournaments
           </button>
         </div>
